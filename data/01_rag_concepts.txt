@@ -1,0 +1,9 @@
+Retrieval-Augmented Generation (RAG) combines information retrieval with generative models.
+The core loop is: ingest documents → chunk them → embed chunks → index → retrieve top-k chunks per query → compose a grounded prompt → generate an answer.
+RAG reduces hallucinations by grounding the model in your own data at answer time.
+Key parameters that affect quality:
+- Chunking strategy: chunk size, overlap, and the splitting heuristic (by sentence, by tokens, fixed words).
+- Embedding model choice: affects semantic search quality; small models like all-MiniLM-L6-v2 are fast and decent.
+- Top-k: retrieving too few chunks can miss relevant context; too many can dilute the prompt or hit context limits.
+- Prompt composition: clear instructions to use context only, and to say “don’t know” if the answer isn’t present.
+RAG differs from fine-tuning: in RAG, knowledge stays outside the model and can be updated by reindexing; in fine-tuning, knowledge is pushed into model weights.

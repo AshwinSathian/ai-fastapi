@@ -1,0 +1,8 @@
+Embeddings map text into dense vectors so that semantically similar texts are close in vector space.
+Cosine similarity is commonly used to compare embeddings.
+When building embeddings:
+- Normalize vectors for cosine similarity, or use an inner-product index with normalized vectors.
+- Batch embedding calls to improve throughput.
+- Cache embeddings on disk to avoid recomputation.
+- Keep metadata per chunk (source file name, page number, section) to show provenance.
+All-MiniLM-L6-v2 is a popular, fast open-source model with 384-dim embeddings and good general performance for semantic search.

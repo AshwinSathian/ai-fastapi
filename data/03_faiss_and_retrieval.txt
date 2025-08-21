@@ -1,0 +1,6 @@
+FAISS is a library for efficient similarity search and clustering of dense vectors.
+For small to medium datasets, a flat index (IndexFlatIP or IndexFlatL2) is simple and effective.
+For larger datasets, IVF or HNSW indexes can improve recall-latency trade-offs.
+In RAG, the retrieval step finds the top-k chunks most similar to the query embedding.
+Top-k is a tuning knob: too low misses context; too high can add noise or exceed prompt limits.
+Store embeddings alongside metadata so you can display which chunks were used and trace answers to sources.
